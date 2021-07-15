@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_weather"
+            android:layout_width="@dimen/weather_icon_size"
+            android:layout_height="@dimen/weather_icon_size"
+            android:layout_marginBottom="@dimen/spacing_8dp"
+            app:layout_constraintBottom_toTopOf="@id/temperature"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/day_date"
+            app:layout_constraintVertical_bias="1" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/city_name"
+            style="@style/TextAppearance.MaterialComponents.Headline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Miami" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/day_date"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_32"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/city_name"
+            tools:text="Monday,2020" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/temperature"
+            style="@style/TextAppearance.MaterialComponents.Headline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="33" />
+
+        <View
+            android:id="@+id/divider_temperature"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#50000000"
+            app:layout_constraintEnd_toEndOf="@id/temperature"
+            app:layout_constraintStart_toStartOf="@id/temperature"
+            app:layout_constraintTop_toBottomOf="@id/temperature" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/temperature_unit"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/temperature"
+            app:layout_constraintTop_toTopOf="@id/temperature"
+            tools:text="C" />
+
+        <com.ankuradlakha.weather.ui.custom.WeatherInfoHeaderBody
+            android:id="@+id/wind_speed_info"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/weather_info_item_height"
+            android:layout_marginStart="@dimen/spacing_32"
+            android:layout_marginTop="@dimen/spacing_32"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:layout_marginBottom="@dimen/spacing_16"
+            app:header="@string/wind_speed"
+            app:layout_constraintEnd_toStartOf="@id/wind_direction_info"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_temperature" />
+
+        <com.ankuradlakha.weather.ui.custom.WeatherInfoHeaderBody
+            android:id="@+id/wind_direction_info"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/weather_info_item_height"
+            android:layout_marginTop="@dimen/spacing_32"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:layout_marginBottom="@dimen/spacing_16"
+            app:header="@string/wind_direction"
+            app:layout_constraintEnd_toStartOf="@id/humidity_info"
+            app:layout_constraintStart_toEndOf="@id/wind_speed_info"
+            app:layout_constraintTop_toBottomOf="@id/divider_temperature" />
+
+        <com.ankuradlakha.weather.ui.custom.WeatherInfoHeaderBody
+            android:id="@+id/humidity_info"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/weather_info_item_height"
+            android:layout_marginTop="@dimen/spacing_32"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:layout_marginBottom="@dimen/spacing_16"
+            app:header="@string/humidity_percentage"
+            app:layout_constraintEnd_toStartOf="@id/rain_info"
+            app:layout_constraintStart_toEndOf="@id/wind_direction_info"
+            app:layout_constraintTop_toBottomOf="@id/divider_temperature" />
+
+        <com.ankuradlakha.weather.ui.custom.WeatherInfoHeaderBody
+            android:id="@+id/rain_info"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/weather_info_item_height"
+            android:layout_marginTop="@dimen/spacing_32"
+            android:layout_marginEnd="@dimen/spacing_32"
+            android:layout_marginBottom="@dimen/spacing_16"
+            app:header="@string/rain_mm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/humidity_info"
+            app:layout_constraintTop_toBottomOf="@id/divider_temperature" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

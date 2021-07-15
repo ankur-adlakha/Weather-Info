@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.ankuradlakha.weather.ui.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/navigate_to_fragment_location_search"
+            app:destination="@id/fragment_location_search"
+            app:enterAnim="@anim/fragment_slide_in_up"
+            app:exitAnim="@anim/fragment_exit_fade"
+            app:popEnterAnim="@anim/fragment_enter_fade"
+            app:popExitAnim="@anim/fragment_slide_out_down" />
+        <action
+            android:id="@+id/navigate_to_fragment_city_details"
+            app:destination="@id/fragment_city_details"
+            app:enterAnim="@anim/fragment_enter_slide"
+            app:exitAnim="@anim/fragment_exit_fade"
+            app:popEnterAnim="@anim/fragment_enter_fade"
+            app:popExitAnim="@anim/fragment_exit_slide" />
+        <action
+            android:id="@+id/navigate_to_fragment_help"
+            app:destination="@id/fragment_help"
+            app:enterAnim="@anim/fragment_slide_in_up"
+            app:exitAnim="@anim/fragment_exit_fade"
+            app:popEnterAnim="@anim/fragment_enter_fade"
+            app:popExitAnim="@anim/fragment_slide_out_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_location_search"
+        android:name="com.ankuradlakha.weather.ui.LocationSearchFragment"
+        android:label="LocationSearchFragment"
+        tools:layout="@layout/fragment_location_search" />
+    <fragment
+        android:id="@+id/fragment_help"
+        android:name="com.ankuradlakha.weather.ui.HelpFragment"
+        android:label="HelpFragment"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/fragment_city_details"
+        android:name="com.ankuradlakha.weather.ui.CityDetailsFragment"
+        android:label="CityDetailsFragment"
+        tools:layout="@layout/fragment_city_details" />
+</navigation>

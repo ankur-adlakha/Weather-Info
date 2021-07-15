@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="weather"
+            type="com.ankuradlakha.weather.data.models.WeatherResponse" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_16"
+        app:contentPadding="@dimen/spacing_16"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_weather"
+                android:layout_width="@dimen/image_size_small"
+                android:layout_height="@dimen/image_size_small"
+                android:layout_marginEnd="@dimen/spacing_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/weather_description"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{weather.weather.get(0).description}"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@id/ic_weather"
+                app:layout_constraintStart_toEndOf="@id/ic_weather"
+                app:layout_constraintTop_toTopOf="@id/ic_weather"
+                tools:text="Cloudy" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sunrise"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_16"
+                android:layout_marginTop="@dimen/spacing_8dp"
+                android:drawablePadding="@dimen/spacing_8dp"
+                android:gravity="center_vertical"
+                android:textStyle="italic"
+                app:drawableStartCompat="@drawable/ic_sunrise"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ic_weather"
+                tools:text="Cloudy" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/sunset"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_16"
+                android:layout_marginTop="@dimen/spacing_8dp"
+                android:drawablePadding="@dimen/spacing_8dp"
+                android:gravity="center_vertical"
+                android:textStyle="italic"
+                app:drawableStartCompat="@drawable/ic_sunset"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sunrise"
+                tools:text="Cloudy" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/location_name"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{weather.name}"
+                app:layout_constraintEnd_toStartOf="@id/sunrise"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ic_weather"
+                tools:text="@tools:sample/cities" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/minimum_temperature"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_8dp"
+                android:drawablePadding="@dimen/spacing_8dp"
+                android:gravity="center_vertical"
+                app:drawableStartCompat="@drawable/ic_baseline_arrow_circle_down_24"
+                app:drawableTint="@color/purple_700"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/location_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/maximum_temperature"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_16"
+                android:layout_marginTop="@dimen/spacing_8dp"
+                android:drawablePadding="@dimen/spacing_8dp"
+                android:gravity="center_vertical"
+                app:drawableStartCompat="@drawable/ic_baseline_arrow_circle_up_24"
+                app:drawableTint="@color/purple_700"
+                app:layout_constraintStart_toEndOf="@id/minimum_temperature"
+                app:layout_constraintTop_toBottomOf="@id/location_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

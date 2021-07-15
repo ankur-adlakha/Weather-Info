@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WeatherInfoHeaderBody">
+        <attr name="header" format="reference" />
+        <attr name="body" format="reference" />
+    </declare-styleable>
+</resources>

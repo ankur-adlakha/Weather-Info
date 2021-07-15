@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Weather Info</string>
+    <string name="search_location">Search Location</string>
+    <string name="help">Help</string>
+    <string name="settings">Settings</string>
+    <string name="save_location">Save Location</string>
+    <string name="wind_direction">Wind Direction</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="humidity_percentage">Humidity (%)</string>
+    <string name="rain_mm">Rain (mm)</string>
+    <string name="select_unit_of_measurement">Select unit of measurement</string>
+    <string name="standard">Standard</string>
+    <string name="metric">Metric</string>
+    <string name="imperial">Imperial</string>
+    <string name="clear_bookmarked_cities">Clear bookmarked cities</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="delete_cities">Delete Cities</string>
+    <string name="delete_all_cities_message">Are you sure you want to delete all your bookmarked cities</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add_city_empty_message">Add a city by clicking on the button at the bottom right end of the screen</string>
+    <string name="temperature_format">%s %s</string>
+</resources>
